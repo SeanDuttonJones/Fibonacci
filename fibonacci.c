@@ -1,17 +1,8 @@
-int Fibonacci(int k)
+#include <math.h>
+
+unsigned long long FibonacciRecurrence(int n) 
 {
-    int fm1 = 0; // fib minus 1 (Fn-1).
-    int fm2 = 1; // fib minus 2 (Fn-2).
-    int fib = 0; // current fib term.
-
-    if(k > 0) {
-        for (int i = 0; i <= k; i++)
-        {
-            fib = fm1 + fm2; // equivalent to F = Fn-1 + Fn-2
-            fm2 = fm1;
-            fm1 = fib;
-        }
-    }
-
-    return fib;
+    // Fibbonacci Formula
+    int fn = (1.0 / sqrt(5)) * (pow(((1 + sqrt(5)) / 2), n) - pow(((1 - sqrt(5)) / 2), n));
+    return fn;
 }
